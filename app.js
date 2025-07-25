@@ -5,6 +5,7 @@ const db = require('./config/db');
 
 // Importamos las rutas
 const juegoRoutes = require('./routes/juegoRoutes');
+const clientesRoutes = require('./routes/clientesRoutes');
 const generoRoutes = require('./routes/generoRoutes');
 const plataformaRoutes = require('./routes/plataformaRoutes');
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 // Usar las rutas
+app.use('/', clientesRoutes);
 app.use('/', juegoRoutes);
 app.use('/', generoRoutes);
 app.use('/', plataformaRoutes);

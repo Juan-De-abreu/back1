@@ -3,7 +3,7 @@ const { getAllGeneros } = require('./generoController');
 
 const getAllJuegos = async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM juegos');
+    const [rows] = await db.query('SELECT idjuego,b.nombre as ngenero, a.nombre as njuegos, a.descripcion as djuegos, precio, valoracion, imagen, fechapublicacion, c.nombre as nstatus FROM juegos as a INNER join generos as b ON a.idgenero=b.idgenero INNER join status as c on a.idestatus=c.id_status;');
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: err.message });

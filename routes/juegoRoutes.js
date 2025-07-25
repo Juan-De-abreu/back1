@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get('/juegos', getAllJuegos);
 router.post('/juegos', createJuegos);
-router.put("/juegos/id", updateJuegos)
-router.delete("/juegos/id",deleteJuegos)
+router.put("/juegos/:id", updateJuegos)
+router.delete("/juegos/:id",deleteJuegos)
 
 module.exports = router;
